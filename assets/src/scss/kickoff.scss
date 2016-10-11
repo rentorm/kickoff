@@ -13,10 +13,10 @@
 
 /*
  * Mixins, helpers and functions
- * See https://github.com/mrmartineau/kickoff-utils.scss
  */
-@import "kickoff-utils.scss";
-@import "include-media/dist/include-media"; // http://include-media.com/
+@import "kickoff-utils.scss"; // https://github.com/mrmartineau/kickoff-utils.scss
+@import "include-media/dist/include-media"; // http://include-media.com
+@import "modular-scale/stylesheets/modular-scale"; // https://github.com/modularscale/modularscale-sass
 
 /**
  * Core variables

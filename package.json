@@ -95,6 +95,7 @@
     "imagemin-pngquant": "^5.0.0",
     "imagemin-svgo": "^5.2.0",
     "include-media": "^1.4.8",
+    "modularscale-sass": "^2.1.1",
     "node-sass": "^3.8.0",
     "npm-sass": "^1.2.0",
     "postcss-bem-linter": "^2.5.1",

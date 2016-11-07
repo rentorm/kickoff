@@ -43,21 +43,20 @@ $color-info               : $blue;               // base colour for info input s
 /**
  * Form inputs and groups
  */
-.form-controlGroup {
-	margin-top: $baseline / 2;
-	margin-bottom: $baseline / 2;
+.form-group {
+	margin-top: ko-multiply($baseline, 0.5);
+	margin-bottom: ko-multiply($baseline, 0.5);
 }
 
 // Legend collapses margin, so next element is responsible for spacing
-.form-legend + .form-controlGroup {
+.form-legend + .form-group {
 	margin-top: $baseline;
 }
 
 // Identify controls by their labels
 .form-label {
-	// margin-bottom: $baseline / 2;
+	// margin-bottom: ko-multiply($baseline, 0.5);
 	color: $label-textColor;
-	font-weight: bold;
 
 	small {
 		font-weight: normal;
@@ -199,7 +198,7 @@ $color-info               : $blue;               // base colour for info input s
  */
 .form-message {
 
-	.form-controlGroup & {
+	.form-group & {
 		padding-top: 0.5em;
 		padding-left: 0.5em;
 	}
@@ -218,7 +217,7 @@ $color-info               : $blue;               // base colour for info input s
 	color: $color-warning;
 }
 
-.form-controlGroup.has-warning {
+.form-group.has-warning {
 	@include ko-formFieldState($color-warning);
 }
 
@@ -227,7 +226,7 @@ $color-info               : $blue;               // base colour for info input s
 	color: $color-error;
 }
 
-.form-controlGroup.has-error {
+.form-group.has-error {
 	@include ko-formFieldState($color-error);
 }
 
@@ -236,7 +235,7 @@ $color-info               : $blue;               // base colour for info input s
 	color: $color-success;
 }
 
-.form-controlGroup.has-success {
+.form-group.has-success {
 	@include ko-formFieldState($color-success);
 }
 
@@ -245,7 +244,7 @@ $color-info               : $blue;               // base colour for info input s
 	color: $color-info;
 }
 
-.form-controlGroup.has-info {
+.form-group.has-info {
 	@include ko-formFieldState($color-info);
 }
 
@@ -269,7 +268,8 @@ $color-info               : $blue;               // base colour for info input s
 	 */
 	.form--horizontal {
 		// Increase spacing between groups
-		.form-controlGroup {
+		.form-group {
+			display: flex;
 			margin-bottom: $baseline;
 			@include ko-clearfix;
 
@@ -282,12 +282,13 @@ $color-info               : $blue;               // base colour for info input s
 		.form-label {
 			float: left;
 			width: 140px;
-			padding-top: 5px;
 			text-align: right;
+			margin-right: $baseline;
+			padding-top: 0.6em;
 		}
 
 		// Move over all input controls and content
-		.form-controlGroup-inputWrapper {
+		.form-group-inputWrapper {
 			margin-left: 160px;
 
 			&:first-child {
@@ -297,11 +298,11 @@ $color-info               : $blue;               // base colour for info input s
 
 		// Remove bottom margin on block level help text since that's accounted for on .form--control-group
 		.form-helpBlock {
-			margin-top: $baseline / 2;
+			margin-top: ko-multiply($baseline, 0.5);
 			margin-bottom: 0;
 		}
 
-		// Move over buttons in .form-actions to align with .form-controlGroup-inputWrapper
+		// Move over buttons in .form-actions to align with .form-group-inputWrapper
 		.form-actions {
 			padding-left: 160px;
 		}
